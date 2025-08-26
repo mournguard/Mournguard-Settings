@@ -29,6 +29,7 @@ func initialize(_default_config: String = DEFAULT_SETTINGS_FILE) -> void:
 func _find_default_value(setting: Setting) -> Variant:
 	var temp := ConfigFile.new()
 	var status := temp.load(_config_file_default)
+	print(temp.encode_to_text())
 	if status != OK:
 		printerr(status)
 		Game.crash()
